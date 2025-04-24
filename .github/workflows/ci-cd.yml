@@ -25,7 +25,7 @@ jobs:
         run: docker build -t mon-site-nginx .
 
       # Étape 4 : Push l'image sur Docker Hub (optionnel)
-      # - name: Push to Docker Hub
-      #   run: |
-      #     docker tag mon-site-nginx ${{ secrets.DOCKER_HUB_USERNAME }}/mon-site-nginx:latest
-      #     docker push ${{ secrets.DOCKER_HUB_USERNAME }}/mon-site-nginx:latest
+      - name: Push to Docker Hub
+        run: |
+          docker tag mon-site-nginx ${{ secrets.DOCKER_HUB_USERNAME }}/mon-site-nginx:latest
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/mon-site-nginx:latest
